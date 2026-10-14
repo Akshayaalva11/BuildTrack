@@ -1,0 +1,322 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+}
+
+button {
+  font-family: inherit;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 230px;
+  background: #17202a;
+  color: white;
+  padding: 24px 16px;
+}
+
+.sidebar h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.subtitle {
+  color: #aeb6bf;
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar button {
+  border: none;
+  background: transparent;
+  color: #d5d8dc;
+  padding: 12px;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+  background: #2e4053;
+  color: white;
+}
+
+.main {
+  flex: 1;
+  padding: 30px;
+  max-width: 1400px;
+}
+
+header {
+  margin-bottom: 25px;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header p {
+  color: #6b7280;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.card,
+.panel {
+  background: rgb(241, 238, 238);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.card strong {
+  font-size: 28px;
+}
+
+.warning {
+  border-left: 4px solid #f59e0b;
+}
+
+.panel {
+  margin-bottom: 20px;
+}
+
+.panel h3 {
+  margin-top: 0;
+}
+
+.project-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.project-row div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.project-row span {
+  color: #777;
+  font-size: 13px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 45%;
+}
+
+.progress {
+  flex: 1;
+  height: 9px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress div {
+  height: 100%;
+  background: #2563eb;
+}
+
+.primary {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 11px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.primary:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.form-grid input,
+.form-grid select {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  font-size: 14px;
+  background: white;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  outline: 2px solid #2563eb;
+  border-color: #2563eb;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.list-item small {
+  color: #6b7280;
+}
+
+.progress-edit {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.progress-edit input {
+  width: 100%;
+}
+
+.stock-low {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+.stock-ok {
+  color: #15803d;
+  font-weight: bold;
+}
+
+.danger {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .list-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .progress-edit {
+    width: 100%;
+  }
+}
+/* Fix form text visibility */
+.form-grid input,
+.form-grid select,
+.form-grid option {
+  color: #1f2937;
+  background-color: #ffffff;
+}
+
+.form-grid input::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+.list-item,
+.list-item strong,
+.list-item small {
+  color: #1f2937;
+}
+
+.panel {
+  color: #1f2937;
+}
+
+.panel p {
+  color: #4b5563;
+}
+
+.panel h3 {
+  color: #111827;
+}
